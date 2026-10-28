@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LearnWithKPai - Study Resources</title>
+    <title>Learn with Kpai - Study Resources</title>
     <style>
         /* CSS Reset & General Styling */
         * {
@@ -14,81 +14,126 @@
         }
 
         body {
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.5;
+            background-color: #fbfaf7; /* Matches logo cream background */
+            color: #262626;
+            line-height: 1.6;
         }
 
-        /* Navigation Bar */
+        /* Header Bar */
         header {
-            background-color: #0f172a;
-            padding: 15px 20px;
+            background-color: #ffffff;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #eae5d9;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #38bdf8;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e59c1b;
+        }
+
+        .brand-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #1e1e1e;
+        }
+
+        .brand-title span {
+            color: #e59c1b; /* Logo yellow-orange */
         }
 
         nav a {
-            color: #cbd5e1;
+            color: #555555;
             text-decoration: none;
             margin-left: 15px;
             font-size: 0.95rem;
+            font-weight: 600;
             transition: color 0.2s;
         }
 
         nav a:hover {
-            color: #38bdf8;
+            color: #e59c1b;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-            color: white;
+            background: linear-gradient(135deg, #f7f3ec 0%, #f0ebd9 100%);
+            color: #262626;
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
+            border-bottom: 1px solid #e6dfcf;
+        }
+
+        .hero img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 800;
-            margin-bottom: 12px;
-            line-height: 1.2;
+            margin-bottom: 10px;
+            color: #1e1e1e;
+        }
+
+        .hero h1 span {
+            color: #e59c1b;
         }
 
         .hero p {
             font-size: 0.95rem;
-            color: #94a3b8;
-            max-width: 500px;
+            color: #666666;
+            max-width: 480px;
             margin: 0 auto;
         }
 
-        /* Study Materials Section */
+        .tagline {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #888888;
+            text-transform: uppercase;
+        }
+
+        /* Main Container */
         .container {
             max-width: 800px;
-            margin: 30px auto;
+            margin: 35px auto;
             padding: 0 16px;
         }
 
         .section-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #0f172a;
-            border-bottom: 2px solid #38bdf8;
-            padding-bottom: 8px;
-            display: inline-block;
+            color: #1e1e1e;
+            border-left: 4px solid #e59c1b;
+            padding-left: 10px;
         }
 
-        /* Responsive Grid & Cards */
+        /* Grid & Cards */
         .grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -103,53 +148,64 @@
 
         .card {
             background: #ffffff;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eae5d9;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
         }
 
         .card h3 {
-            font-size: 1.1rem;
-            color: #0f172a;
+            font-size: 1.05rem;
+            color: #1e1e1e;
             margin-bottom: 8px;
         }
 
         .card p {
             font-size: 0.875rem;
-            color: #64748b;
+            color: #666666;
             margin-bottom: 16px;
         }
 
         /* Download Button */
         .download-btn {
             display: block;
-            background-color: #0284c7;
+            background-color: #e59c1b; /* Logo yellow-orange */
             color: white;
             text-align: center;
             padding: 10px 16px;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 0.9rem;
-            font-weight: 600;
-            transition: background-color 0.2s;
+            font-weight: 700;
+            transition: background-color 0.2s, transform 0.1s;
         }
 
         .download-btn:hover {
-            background-color: #0369a1;
+            background-color: #d08a12;
+        }
+
+        .download-btn:active {
+            transform: scale(0.98);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             font-size: 0.85rem;
-            color: #94a3b8;
+            color: #777777;
+            background-color: #f7f3ec;
             margin-top: 40px;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid #e6dfcf;
         }
     </style>
 </head>
@@ -157,17 +213,22 @@
 
     <!-- Header Navigation -->
     <header>
-        <div class="logo">LearnWithKPai</div>
+        <a href="#home" class="brand">
+            <img src="logo.png" alt="Learn with Kpai Logo">
+            <div class="brand-title">Learn with <span>Kpai</span></div>
+        </a>
         <nav>
             <a href="#home">Home</a>
             <a href="#materials">Materials</a>
         </nav>
     </header>
 
-    <!-- Hero Banner -->
+    <!-- Hero Banner with Logo -->
     <section class="hero" id="home">
-        <h1>Welcome to LearnWithKPai</h1>
-        <p>Explore resources, notes, and study materials for your learning journey.</p>
+        <img src="logo.png" alt="Learn with Kpai Logo">
+        <h1>Learn with <span>Kpai</span></h1>
+        <p>Your one-stop destination for study resources, guides, and learning materials.</p>
+        <div class="tagline">Study • Grow • Achieve</div>
     </section>
 
     <!-- Main Content Area -->
@@ -179,20 +240,19 @@
             <div class="card">
                 <div>
                     <h3>Isai Missionary Complete Notes (PDF)</h3>
-                    <p>Detailed study material covering the history, background, and key concepts.</p>
+                    <p>Download the comprehensive study material covering the history, background, and key concepts.</p>
                 </div>
-                <!-- Local download link pointing to your study material file -->
                 <a href="isai-missionary-material.pdf" download class="download-btn">Download PDF Notes</a>
             </div>
         </div>
 
         <!-- General Section -->
-        <h2 class="section-title" style="margin-top: 30px;">General Study Notes</h2>
+        <h2 class="section-title" style="margin-top: 35px;">General Study Notes</h2>
         <div class="grid">
             <div class="card">
                 <div>
                     <h3>Complete Course Notes</h3>
-                    <p>Download the summary PDF covering key general topics.</p>
+                    <p>Download the summary PDF covering key general topics and quick reviews.</p>
                 </div>
                 <a href="sample-notes.pdf" download class="download-btn">Download PDF</a>
             </div>
@@ -202,7 +262,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 LearnWithKPai. All rights reserved.</p>
+        <p>&copy; 2026 Learn with Kpai. All rights reserved.</p>
     </footer>
 
 </body>
